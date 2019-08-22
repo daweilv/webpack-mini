@@ -9,7 +9,7 @@ git clone https://github.com/daweilv/webpack-mini.git
 
 npm i
 
-git checkout -b <stepx>
+git checkout step1
 ```
 
 ## 实现
