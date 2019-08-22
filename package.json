@@ -1,0 +1,24 @@
+{
+  "name": "webpack-mini",
+  "version": "1.0.0",
+  "description": "从零实现一个 JS 模块打包器",
+  "scripts": {
+    "format": "standard --fix "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daweilv/webpack-mini.git"
+  },
+  "keywords": [],
+  "author": "daweilv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daweilv/webpack-mini/issues"
+  },
+  "homepage": "https://github.com/daweilv/webpack-mini#readme",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "standard": "^14.0.0"
+  }
+}
