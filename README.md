@@ -7,6 +7,8 @@
 ```bash
 git clone https://github.com/daweilv/webpack-mini.git
 
+cd webpack-mini
+
 npm i
 
 git checkout step1
