@@ -17,6 +17,14 @@ function createGraph (filePath) {
     ImportDeclaration ({ node }) {
       node.source.value = path.resolve(dirPath, node.source.value)
       dependencies.push(createGraph(node.source.value))
+    },
+
+    // 添加 require() 语法支持
+    CallExpression ({ node }) {
+      if (node.callee.name === 'require') {
+        node.arguments[0].value = path.resolve(dirPath, node.arguments[0].value)
+        dependencies.push(createGraph(node.arguments[0].value))
+      }
     }
   }
 
@@ -58,9 +66,11 @@ function flattenGraph (graph, modules = []) {
 function createBundle (modules) {
   return `(function (modules) {
     function require(moduleId) {
-        let exports = {};
-        modules[moduleId](exports, require);
-        return exports;
+        let module = {
+          exports:{}
+        };
+        modules[moduleId](module, module.exports, require);
+        return module.exports;
     }
     require("${modules[0].id}")
 })({${modules.map(module =>
@@ -68,7 +78,7 @@ function createBundle (modules) {
 }
 
 function generateModuleTemplate (code) {
-  return `function (exports, require) {
+  return `function (module, exports, require) {
     ${code}
 }`
 }

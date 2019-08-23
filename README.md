@@ -20,7 +20,8 @@ git checkout step1
 代码见[分支 step1](https://github.com/daweilv/webpack-mini/tree/step1)，详细分析请[查看文章](https://daweilv.com/2019/08/20/从零实现一个JS模块打包器/)。
 
 ### 二、支持 commonjs 打包
-todo
+有了 es6 module 都已经啃下来了，commonjs 的 module.exports/require 就很简单了。
+代码见[分支 step1](https://github.com/daweilv/webpack-mini/tree/step2)
 
-### 三、缓存及循环依赖
+### 三、优化
 todo
