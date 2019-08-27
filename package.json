@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "从零实现一个 JS 模块打包器",
   "scripts": {
+    "webpack": "webpack",
     "format": "standard --fix "
   },
   "repository": {
@@ -20,5 +21,10 @@
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "standard": "^14.0.0"
+  },
+  "dependencies": {
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7"
   }
 }

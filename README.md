@@ -27,4 +27,21 @@ es6 module 都已经啃下来了，commonjs 的 module.exports/require 就很简
 代码见[分支 step2](https://github.com/daweilv/webpack-mini/tree/step2)
 
 ### 三、优化
-todo
+
+- [x] 模块缓存
+- [x] 循环依赖
+- [x] 省略后缀的文件查找
+
+代码见[分支 step3](https://github.com/daweilv/webpack-mini/tree/step3)
+
+nodejs 官网经典依赖的[例子测试](https://nodejs.org/api/modules.html#modules_cycles)
+```
+main starting
+a starting
+b starting
+in b, a.done = false
+b done
+in a, b.done = true
+a done
+in main, a.done = true, b.done = true
+```
